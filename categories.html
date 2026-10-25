@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Categories — NewsFlow</title>
-  <meta name="description" content="Browse NewsFlow by category. Technology, Markets, World, Culture, Science, Sport, Politics, Gaming." />
+  <title>Categories — Blog — NewsFlow</title>
+  <meta name="description" content="Browse NewsFlow blog posts by category. Reviews, comparisons, and news." />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📂</text></svg>" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -16,15 +16,22 @@
 <div class="aurora"><span class="a"></span><span class="b"></span><span class="c"></span></div>
 <div class="grain"></div>
 
+<div class="affiliate-banner">
+  <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/><path d="M12 6v6l4 2"/></svg> Affiliate Disclosure</span>
+  <span class="notes"><strong>Affiliate disclosure:</strong> <a class="affiliate-link" href="contact.html">Read policy</a></span>
+</div>
+
 <header id="header">
   <nav>
-    <a href="index.html" class="logo"><span class="dot"></span>News<b>Flow</b></a>
+    <a href="../index.html" class="logo"><span class="dot"></span>News<b>Flow</b></a>
     <ul class="nav-links" id="navLinks">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="categories.html">Categories</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="contact.html">Contact</a></li>
-      <li><a href="newsletter.html" class="subscribe">Subscribe</a></li>
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../categories.html">Categories</a></li>
+      <li><a href="../products.html">Products</a></li>
+      <li><a href="../blog.html">Blog</a></li>
+      <li><a href="../about.html">About</a></li>
+      <li><a href="../contact.html">Contact</a></li>
+      <li><a href="../newsletter.html" class="subscribe">Subscribe</a></li>
     </ul>
     <button class="burger" id="burger" aria-label="menu"><span></span><span></span><span></span></button>
   </nav>
@@ -35,61 +42,51 @@
   <div class="track" id="tickerTrack"></div>
 </div>
 
-<!-- HERO -->
 <section class="hero">
-  <span class="kicker"><span class="bar"></span>Browse by beat</span>
-  <h1>Choose your <span class="em">beat</span>.</h1>
-  <p>Headlines from the topics that shape your world. Each section is updated daily.</p>
+  <span class="kicker"><span class="bar"></span>Blog categories</span>
+  <h1>Explore <span class="em">by topic</span>.</h1>
+  <p>Every review, comparison, and news story — filter by category.</p>
   <div class="hero-cta">
-    <a href="index.html" class="btn btn-ghost">← Back to Home</a>
-    <a href="newsletter.html" class="btn btn-primary">Get the Daily Brief</a>
+    <a href="../blog.html" class="btn btn-ghost">← Back to blog</a>
+    <a href="../newsletter.html" class="btn btn-primary">Get the weekly brief</a>
   </div>
   <div class="scroll-hint"><span class="mouse"></span>Scroll</div>
 </section>
 
-<!-- GRID -->
-<section id="trending">
-  <div class="sec-head reveal">
-    <div><div class="num">01 — ALL CATEGORIES</div><h2>Pick a topic</h2></div>
-    <a href="newsletter.html">Subscribe for daily updates →</a>
+<section id="blog-categories">
+  <div class="cats reveal">
+    <div class="cat" data-blog-cat="all"><div class="ic">📄</div><h5>All</h5><span>All stories</span></div>
+    <div class="cat" data-blog-cat="Review"><div class="ic">⭐</div><h5>Reviews</h5><span>Tested by hand</span></div>
+    <div class="cat" data-blog-cat="Comparison"><div class="ic">⚖</div><h5>Comparisons</h5><span>No bias, no noise</span></div>
+    <div class="cat" data-blog-cat="News"><div class="ic">📰</div><h5>News &amp; Research</h5><span>What's moving</span></div>
+    <div class="cat" data-blog-cat="HowTo"><div class="ic">🛠️</div><h5>How-To Guides</h5><span>Step-by-step</span></div>
   </div>
-  <div class="grid" id="grid"></div>
 </section>
 
-<!-- CATEGORIES -->
-<section id="categories">
+<section id="category-posts">
   <div class="sec-head reveal">
-    <div><div class="num">02 — EXPLORE</div><h2>Browse by beat</h2></div>
-    <a href="index.html">← Back to Home</a>
+    <div><div class="num">01 — LATEST</div><h2>Latest posts</h2></div>
+    <a href="../blog.html">View all →</a>
   </div>
-  <div class="cats reveal">
-    <div class="cat" data-cat="Technology"><div class="ic">🚀</div><h5>Technology</h5><span>1,204 stories</span></div>
-    <div class="cat" data-cat="Markets"><div class="ic">📈</div><h5>Markets</h5><span>892 stories</span></div>
-    <div class="cat" data-cat="World"><div class="ic">🌍</div><h5>World</h5><span>2,410 stories</span></div>
-    <div class="cat" data-cat="Culture"><div class="ic">🎬</div><h5>Culture</h5><span>640 stories</span></div>
-    <div class="cat" data-cat="Science"><div class="ic">🧬</div><h5>Science</h5><span>755 stories</span></div>
-    <div class="cat" data-cat="Sport"><div class="ic">⚽</div><h5>Sport</h5><span>1,880 stories</span></div>
-    <div class="cat" data-cat="Politics"><div class="ic">🏛️</div><h5>Politics</h5><span>1,120 stories</span></div>
-    <div class="cat" data-cat="Gaming"><div class="ic">🎮</div><h5>Gaming</h5><span>530 stories</span></div>
-  </div>
+  <div class="grid" id="categoryGrid"></div>
 </section>
 
 <footer>
   <div class="foot-grid">
     <div class="brand">
-      <a href="index.html" class="logo"><span class="dot"></span>News<b>Flow</b></a>
-      <p>Cinematic storytelling for a fast-moving world. Independent. Curious. Always on.</p>
+      <a href="../index.html" class="logo"><span class="dot"></span>News<b>Flow</b></a>
+      <p>Honest tech reviews with affiliate links.</p>
     </div>
-    <div><h6>Sections</h6><ul><li><a href="categories.html">Technology</a></li><li><a href="categories.html">Markets</a></li><li><a href="categories.html">World</a></li><li><a href="categories.html">Culture</a></li></ul></div>
-    <div><h6>Company</h6><ul><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li><li><a href="newsletter.html">Newsletter</a></li><li><a href="404.html">Press</a></li></ul></div>
+    <div><h6>Sections</h6><ul><li><a href="../categories.html">Technology</a></li><li><a href="../categories.html">Gadgets</a></li><li><a href="../categories.html">Audio</a></li></ul></div>
+    <div><h6>Company</h6><ul><li><a href="../about.html">About</a></li><li><a href="../contact.html">Contact</a></li><li><a href="../newsletter.html">Newsletter</a></li></ul></div>
     <div><h6>Follow</h6><ul><li><a href="#">X / Twitter</a></li><li><a href="#">Instagram</a></li><li><a href="#">YouTube</a></li><li><a href="#">RSS</a></li></ul></div>
   </div>
   <div class="foot-bottom">
     <span>© 2026 NewsFlow Media. All rights reserved.</span>
-    <span>Privacy · Terms · Cookie Settings</span>
+    <span><a href="../privacy.html">Privacy</a> · <a href="../terms.html">Terms</a> · <span class="affiliate-note">Affiliate disclosure</span></span>
   </div>
 </footer>
 
-<script src="script.js"></script>
+<script src="../script.js"></script>
 </body>
 </html>

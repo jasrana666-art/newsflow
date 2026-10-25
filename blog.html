@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog — NewsFlow</title>
+  <meta name="description" content="NewsFlow blog — honest tech reviews, product comparisons, and the latest news in tech. Written by people who test everything by hand." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📝</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<div id="progress"></div>
+<div class="aurora"><span class="a"></span><span class="b"></span><span class="c"></span></div>
+<div class="grain"></div>
+
+<div class="affiliate-banner">
+  <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/><path d="M12 6v6l4 2"/></svg> Affiliate Disclosure</span>
+  <span class="notes"><strong>Affiliate disclosure:</strong> Some links are affiliate links. <a class="affiliate-link" href="contact.html">Read policy</a></span>
+</div>
+
+<header id="header">
+  <nav>
+    <a href="index.html" class="logo"><span class="dot"></span>News<b>Flow</b></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="categories.html">Categories</a></li>
+      <li><a href="products.html">Products</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="newsletter.html" class="subscribe">Subscribe</a></li>
+    </ul>
+    <button class="burger" id="burger" aria-label="menu"><span></span><span></span><span></span></button>
+  </nav>
+</header>
+
+<div class="ticker">
+  <div class="label">● Live</div>
+  <div class="track" id="tickerTrack"></div>
+</div>
+
+<section class="hero">
+  <span class="kicker"><span class="bar"></span>Blog</span>
+  <h1>Stories from <span class="em">the wire</span>.</h1>
+  <p>Latest reviews, comparisons, and the tech that matters — written by people who test everything by hand.</p>
+  <div class="hero-cta">
+    <a href="#latest-posts" class="btn btn-primary">Read the blog →</a>
+    <a href="newsletter.html" class="btn btn-ghost">Get the weekly brief</a>
+  </div>
+  <div class="scroll-hint"><span class="mouse"></span>Scroll</div>
+</section>
+
+<section id="latest-posts">
+  <div class="sec-head reveal">
+    <div><div class="num">01 — LATEST POSTS</div><h2>From the blog</h2></div>
+    <a href="#all-posts">View all →</a>
+  </div>
+  <div class="grid" id="latestGrid"></div>
+</section>
+
+<section id="all-posts">
+  <div class="sec-head reveal">
+    <div><div class="num">02 — CATEGORIES</div><h2>Explore by category</h2></div>
+    <a href="blog.html?cat=all">View all posts →</a>
+  </div>
+  <div class="cats reveal">
+    <div class="cat" data-blog-cat="all"><div class="ic">📄</div><h5>All</h5><span>Stories</span></div>
+    <div class="cat" data-blog-cat="Review"><div class="ic">⭐</div><h5>Reviews</h5><span>Tested by hand</span></div>
+    <div class="cat" data-blog-cat="Comparison"><div class="ic">⚖</div><h5>Comparisons</h5><span>No bias, no noise</span></div>
+    <div class="cat" data-blog-cat="News"><div class="ic">📰</div><h5>News &amp; Research</h5><span>What's moving</span></div>
+    <div class="cat" data-blog-cat="HowTo"><div class="ic">🛠️</div><h5>How-To Guides</h5><span>Step-by-step</span></div>
+  </div>
+</section>
+
+<div class="sponsor reveal">
+  <div class="logo">🧠</div>
+  <p>AI writes this sentence. We test every product. Sponsored content.</p>
+</div>
+
+<footer>
+  <div class="foot-grid">
+    <div class="brand">
+      <a href="index.html" class="logo"><span class="dot"></span>News<b>Flow</b></a>
+      <p>Honest tech reviews with affiliate links. We never recommend a product we wouldn't use ourselves.</p>
+    </div>
+    <div><h6>Sections</h6><ul><li><a href="categories.html">Technology</a></li><li><a href="categories.html">Gadgets</a></li><li><a href="categories.html">Audio</a></li><li><a href="categories.html">AI Tools</a></li></ul></div>
+    <div><h6>Company</h6><ul><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li><li><a href="newsletter.html">Newsletter</a></li><li><a href="404.html">Press</a></li></ul></div>
+    <div><h6>Follow</h6><ul><li><a href="#">X / Twitter</a></li><li><a href="#">Instagram</a></li><li><a href="#">YouTube</a></li><li><a href="#">RSS</a></li></ul></div>
+  </div>
+  <div class="foot-bottom">
+    <span>© 2026 NewsFlow Media. All rights reserved.</span>
+    <span><a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · <span class="affiliate-note">Affiliate disclosure</span></span>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
