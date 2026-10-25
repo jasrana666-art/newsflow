@@ -1,0 +1,17 @@
+{
+  "name": "NewsFlow",
+  "version": "1.0.0",
+  "description": "Cinematic news and blog. Stories that move at the speed of now.",
+  "scripts": {
+    "start": "python -m http.server 8000"
+  },
+  "keywords": [
+    "news",
+    "blog",
+    "cinematic",
+    "dashboard",
+    "static-site"
+  ],
+  "author": "NewsFlow",
+  "license": "MIT"
+}

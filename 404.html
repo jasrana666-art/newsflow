@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>404 — NewsFlow</title>
+  <meta name="description" content="Page not found | NewsFlow — cinematic news and blog. Stories that move at the speed of now." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔍</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<div id="progress"></div>
+<div class="aurora"><span class="a"></span><span class="b"></span><span class="c"></span></div>
+<div class="grain"></div>
+
+<header id="header">
+  <nav>
+    <a href="index.html" class="logo"><span class="dot"></span>News<b>Flow</b></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="categories.html">Categories</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="newsletter.html" class="subscribe">Subscribe</a></li>
+    </ul>
+    <button class="burger" id="burger" aria-label="menu"><span></span><span></span><span></span></button>
+  </nav>
+</header>
+
+<div class="ticker">
+  <div class="label">● Live</div>
+  <div class="track" id="tickerTrack"></div>
+</div>
+
+<section class="hero" style="min-height:100vh;display:flex;flex-direction:column;justify-content:center">
+  <span class="kicker"><span class="bar"></span>404</span>
+  <h1>Page <span class="em">not found</span>.</h1>
+  <p>The page you're looking for doesn't exist or has been moved.</p>
+  <div class="hero-cta">
+    <a href="index.html" class="btn btn-primary">← Back to Home</a>
+    <a href="categories.html" class="btn btn-ghost">Browse categories →</a>
+  </div>
+  <div class="scroll-hint"><span class="mouse"></span>Scroll</div>
+</section>
+
+<footer>
+  <div class="foot-grid">
+    <div class="brand">
+      <a href="index.html" class="logo"><span class="dot"></span>News<b>Flow</b></a>
+      <p>Cinematic storytelling for a fast-moving world. Independent. Curious. Always on.</p>
+    </div>
+    <div><h6>Sections</h6><ul><li><a href="categories.html">Technology</a></li><li><a href="categories.html">Markets</a></li><li><a href="categories.html">World</a></li><li><a href="categories.html">Culture</a></li></ul></div>
+    <div><h6>Company</h6><ul><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li><li><a href="newsletter.html">Newsletter</a></li><li><a href="404.html">Press</a></li></ul></div>
+    <div><h6>Follow</h6><ul><li><a href="#">X / Twitter</a></li><li><a href="#">Instagram</a></li><li><a href="#">YouTube</a></li><li><a href="#">RSS</a></li></ul></div>
+  </div>
+  <div class="foot-bottom">
+    <span>© 2026 NewsFlow Media. All rights reserved.</span>
+    <span>Privacy · Terms · Cookie Settings</span>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

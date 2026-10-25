@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NewsFlow — Stories That Move</title>
+  <meta name="description" content="NewsFlow — cinematic news and blog. Stories that move at the speed of now." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<div id="progress"></div>
+<div class="aurora"><span class="a"></span><span class="b"></span><span class="c"></span></div>
+<div class="grain"></div>
+
+<header id="header">
+  <nav>
+    <a href="index.html" class="logo"><span class="dot"></span>News<b>Flow</b></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="categories.html">Categories</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="newsletter.html" class="subscribe">Subscribe</a></li>
+    </ul>
+    <button class="burger" id="burger" aria-label="menu"><span></span><span></span><span></span></button>
+  </nav>
+</header>
+
+<div class="ticker">
+  <div class="label">● Live</div>
+  <div class="track" id="tickerTrack"></div>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <span class="kicker"><span class="bar"></span>Stories that move at the speed of now</span>
+  <h1>The news, <span class="em">cinematically</span> told.</h1>
+  <p>Breaking headlines, deep dives, and the stories shaping tomorrow — delivered with clarity, depth, and a little drama. Welcome to NewsFlow.</p>
+  <div class="hero-cta">
+    <a href="categories.html" class="btn btn-primary">Start Reading →</a>
+    <a href="newsletter.html" class="btn btn-ghost">Get the Daily Brief</a>
+  </div>
+  <div class="hero-stats">
+    <div class="s"><div class="n" data-count="12400">0</div><div class="l">Stories</div></div>
+    <div class="s"><div class="n" data-count="380">0</div><div class="l">Reporters</div></div>
+    <div class="s"><div class="n" data-count="26">0</div><div class="l">Countries</div></div>
+  </div>
+  <div class="scroll-hint"><span class="mouse"></span>Scroll</div>
+</section>
+
+<!-- TRENDING / GRID -->
+<section id="trending">
+  <div class="sec-head reveal">
+    <div><div class="num">01 — TRENDING NOW</div><h2>Fresh off the wire</h2></div>
+    <a href="categories.html">All stories →</a>
+  </div>
+  <div class="grid" id="grid"></div>
+</section>
+
+<!-- FEATURED -->
+<section id="featured">
+  <div class="sec-head reveal">
+    <div><div class="num">02 — THE SPOTLIGHT</div><h2>Editor's pick</h2></div>
+  </div>
+  <div class="feature reveal">
+    <div class="img"><span class="tag">Cover Story</span><div class="big"><span class="glitch">01</span></div></div>
+    <div class="body">
+      <div class="meta"><span class="live">Live</span><span>Technology</span><span>· 12 min read</span></div>
+      <h3>The AI agents that now write themselves — and what it means for journalism</h3>
+      <p>A quiet revolution is reshaping how stories get made. Inside the newsrooms betting everything on machines that never sleep, and the humans learning to work beside them.</p>
+      <div class="author"><div class="av"></div><div><div class="n">Aria Chen</div><div class="d">Chief Correspondent · 2h ago</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CATEGORIES -->
+<section id="categories">
+  <div class="sec-head reveal">
+    <div><div class="num">03 — EXPLORE</div><h2>Browse by beat</h2></div>
+    <a href="categories.html">Full index →</a>
+  </div>
+  <div class="cats reveal">
+    <div class="cat"><div class="ic">🚀</div><h5>Technology</h5><span>1,204 stories</span></div>
+    <div class="cat"><div class="ic">📈</div><h5>Markets</h5><span>892 stories</span></div>
+    <div class="cat"><div class="ic">🌍</div><h5>World</h5><span>2,410 stories</span></div>
+    <div class="cat"><div class="ic">🎬</div><h5>Culture</h5><span>640 stories</span></div>
+    <div class="cat"><div class="ic">🧬</div><h5>Science</h5><span>755 stories</span></div>
+    <div class="cat"><div class="ic">⚽</div><h5>Sport</h5><span>1,880 stories</span></div>
+    <div class="cat"><div class="ic">🏛️</div><h5>Politics</h5><span>1,120 stories</span></div>
+    <div class="cat"><div class="ic">🎮</div><h5>Gaming</h5><span>530 stories</span></div>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section id="newsletter">
+  <div class="news reveal">
+    <h2>Don't miss a beat.</h2>
+    <p>One email. The five stories that actually matter, delivered before your coffee gets cold. No noise, ever.</p>
+    <form id="subForm">
+      <input type="email" placeholder="you@email.com" required aria-label="email" />
+      <button type="submit">Join Free</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="foot-grid">
+    <div class="brand">
+      <a href="index.html" class="logo"><span class="dot"></span>News<b>Flow</b></a>
+      <p>Cinematic storytelling for a fast-moving world. Independent. Curious. Always on.</p>
+    </div>
+    <div><h6>Sections</h6><ul><li><a href="categories.html">Technology</a></li><li><a href="categories.html">Markets</a></li><li><a href="categories.html">World</a></li><li><a href="categories.html">Culture</a></li></ul></div>
+    <div><h6>Company</h6><ul><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li><li><a href="newsletter.html">Newsletter</a></li><li><a href="404.html">Press</a></li></ul></div>
+    <div><h6>Follow</h6><ul><li><a href="#">X / Twitter</a></li><li><a href="#">Instagram</a></li><li><a href="#">YouTube</a></li><li><a href="#">RSS</a></li></ul></div>
+  </div>
+  <div class="foot-bottom">
+    <span>© 2026 NewsFlow Media. All rights reserved.</span>
+    <span>Privacy · Terms · Cookie Settings</span>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
