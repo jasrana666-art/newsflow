@@ -26,7 +26,7 @@ const headlines = [
   ['Health','Breakthrough therapy enters final trials']
 ];
 const track = document.getElementById('tickerTrack');
-const html = headlines.map(([c, t]) => `<span><b>${c}</b>${t}</span>`).join('');
+const html = headlines.map(([c, t]) => '<span><b>' + c + '</b>' + t + '</span>').join('');
 track.innerHTML = html + html; // duplicate for seamless loop
 
 // article cards
@@ -42,32 +42,31 @@ const articles = [
 // ============ CATEGORIES FILTER (categories.html) ============
 const catCards = document.querySelectorAll('.cat[data-cat]');
 const articleGrid = document.getElementById('grid');
-const teamGrid = document.getElementById('teamGrid');
-const infoGrid = document.getElementById('infoGrid');
-const briefGrid = document.getElementById('briefGrid');
 
 function renderArticles(filter) {
-  const filtered = filter
-    ? articles.filter(a => a.cat === filter)
-    : articles;
-  articleGrid.innerHTML = filtered.map(a => `
-    <article class="card ${a.c} reveal">
-      <div class="thumb"><span class="cat">${a.cat}</span><span class="dur">${a.time}</span></div>
-      <div class="content">
-        <h4>${a.t}</h4>
-        <p>${a.d}</p>
-        <div class="foot"><span>${a.date}</span><span class="read">Read →</span></div>
-      </div>
-    </div>`).join('');
+  const filtered = filter ? articles.filter(a => a.cat === filter) : articles;
+  let html = '';
+  filtered.forEach(a => {
+    html += '<article class="card ' + a.c + ' reveal">';
+    html += '<div class="thumb"><span class="cat">' + a.cat + '</span><span class="dur">' + a.time + '</span></div>';
+    html += '<div class="content">';
+    html += '<h4>' + a.t + '</h4>';
+    html += '<p>' + a.d + '</p>';
+    html += '<div class="foot"><span>' + a.date + '</span><span class="read">Read &rarr;</span></div>';
+    html += '</div></div>';
+  });
+  articleGrid.innerHTML = html;
 }
 
-catCards.forEach(card => {
-  card.addEventListener('click', () => {
-    catCards.forEach(c => c.style.borderColor = 'var(--line)');
-    card.style.borderColor = 'var(--accent)';
-    renderArticles(card.dataset.cat);
+if (catCards.length > 0) {
+  catCards.forEach(card => {
+    card.addEventListener('click', () => {
+      catCards.forEach(c => c.style.borderColor = 'var(--line)');
+      card.style.borderColor = 'var(--accent)';
+      renderArticles(card.dataset.cat);
+    });
   });
-});
+}
 
 // ============ TEAM GRID (about.html) ============
 const teamMembers = [
@@ -78,17 +77,22 @@ const teamMembers = [
   { name:'Yuki Sato', role:'Culture Critic', blurb:'Film and music from Tokyo and NYC' },
   { name:'Fatima Al-Rashid', role:'Politics Correspondent', blurb:'International relations and policy' }
 ];
-teamGrid.innerHTML = teamMembers.map(m => `
-  <div class="card c1 reveal" style="cursor:default">
-    <div class="thumb"><span class="cat" style="background:rgba(5,6,10,.7);top:14px;left:14px">${m.role}</span></div>
-    <div class="content">
-      <div style="display:flex;align-items:center;gap:.8rem;margin-bottom:.8rem">
-        <div style="width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,#ff3b5c,#4d7cff)"></div>
-        <div style="flex:1"><div class="n" style="font-weight:600;font-size:.9rem">${m.name}</div><div class="d" style="color:var(--muted);font-size:.78rem">${m.role}</div></div>
-      </div>
-      <p>${m.blurb}</p>
-    </div>
-  </div>`).join('');
+const teamGrid = document.getElementById('teamGrid');
+if (teamGrid) {
+  let html = '';
+  teamMembers.forEach(m => {
+    html += '<div class="card c1 reveal" style="cursor:default">';
+    html += '<div class="thumb"><span class="cat" style="background:rgba(5,6,10,.7);top:14px;left:14px">' + m.role + '</span></div>';
+    html += '<div class="content">';
+    html += '<div style="display:flex;align-items:center;gap:.8rem;margin-bottom:.8rem">';
+    html += '<div style="width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,#ff3b5c,#4d7cff)"></div>';
+    html += '<div style="flex:1"><div class="n" style="font-weight:600;font-size:.9rem">' + m.name + '</div><div class="d" style="color:var(--muted);font-size:.78rem">' + m.role + '</div></div>';
+    html += '</div>';
+    html += '<p>' + m.blurb + '</p>';
+    html += '</div></div>';
+  });
+  teamGrid.innerHTML = html;
+}
 
 // ============ INFO CARDS (contact.html) ============
 const contacts = [
@@ -97,13 +101,18 @@ const contacts = [
   { title:'37 Market Street, London', desc:'HQ office' },
   { title:'+44 20 7946 0958', desc:'Newsroom line' }
 ];
-infoGrid.innerHTML = contacts.map(c => `
-  <div class="card c2 reveal" style="cursor:default">
-    <div class="content">
-      <h4>${c.title}</h4>
-      <p>${c.desc}</p>
-    </div>
-  </div>`).join('');
+const infoGrid = document.getElementById('infoGrid');
+if (infoGrid) {
+  let html = '';
+  contacts.forEach(c => {
+    html += '<div class="card c2 reveal" style="cursor:default">';
+    html += '<div class="content">';
+    html += '<h4>' + c.title + '</h4>';
+    html += '<p>' + c.desc + '</p>';
+    html += '</div></div>';
+  });
+  infoGrid.innerHTML = html;
+}
 
 // ============ NEWSLETTER BRIEF (newsletter.html) ============
 const briefs = [
@@ -112,15 +121,20 @@ const briefs = [
   { cat:'Science', c:'c3', t:'Scientists map the brain in unprecedented 3D detail', d:'The most complete connectome yet could unlock secrets of memory and disease.', time:'9 min' },
   { cat:'World', c:'c4', t:'A generation rediscovers public transit — and redesigns cities', d:'Car-free districts are booming. Urban planners call it the biggest shift in a century.', time:'7 min' }
 ];
-briefGrid.innerHTML = briefs.map(b => `
-  <article class="card ${b.c} reveal">
-    <div class="thumb"><span class="cat">${b.cat}</span><span class="dur">${b.time}</span></div>
-    <div class="content">
-      <h4>${b.t}</h4>
-      <p>${b.d}</p>
-      <div class="foot"><span>Today</span><span class="read">Read →</span></div>
-    </div>
-  </article>`).join('');
+const briefGrid = document.getElementById('briefGrid');
+if (briefGrid) {
+  let html = '';
+  briefs.forEach(b => {
+    html += '<article class="card ' + b.c + ' reveal">';
+    html += '<div class="thumb"><span class="cat">' + b.cat + '</span><span class="dur">' + b.time + '</span></div>';
+    html += '<div class="content">';
+    html += '<h4>' + b.t + '</h4>';
+    html += '<p>' + b.d + '</p>';
+    html += '<div class="foot"><span>Today</span><span class="read">Read &rarr;</span></div>';
+    html += '</div></article>';
+  });
+  briefGrid.innerHTML = html;
+}
 
 // reveal on scroll
 const io = new IntersectionObserver(es => es.forEach(e => {
@@ -144,11 +158,14 @@ const cio = new IntersectionObserver(es => es.forEach(e => {
 counters.forEach(c => cio.observe(c));
 
 // newsletter
-document.getElementById('subForm').addEventListener('submit', e => {
-  e.preventDefault();
-  const btn = e.target.querySelector('button');
-  btn.textContent = '✓ Subscribed!';
-  btn.style.background = 'var(--accent-3)';
-  e.target.querySelector('input').value = '';
-  setTimeout(() => { btn.textContent = 'Join Free'; btn.style.background = ''; }, 2600);
-});
+const subForm = document.getElementById('subForm');
+if (subForm) {
+  subForm.addEventListener('submit', e => {
+    e.preventDefault();
+    const btn = e.target.querySelector('button');
+    btn.textContent = 'Submitted!';
+    btn.style.background = 'var(--accent-3)';
+    e.target.querySelector('input').value = '';
+    setTimeout(() => { btn.textContent = 'Join Free'; btn.style.background = ''; }, 2600);
+  });
+}
